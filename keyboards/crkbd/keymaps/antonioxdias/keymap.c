@@ -60,9 +60,9 @@ MT(MOD_LCTL,KC_ESC),KC_NO, KC_4,    KC_5,    KC_6,    KC_0,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_PIPE, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_AMPR, KC_SLSH, KC_QUOT, KC_DQUO, KC_ASTR, KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO,   KC_NO,   KC_NO, KC_LCBR,                      KC_RCBR, KC_CIRC, KC_TILD,  KC_GRV,UC(0x00B4),KC_ENT,\
+MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO,   KC_NO,   KC_NO, KC_LCBR,                      KC_RCBR, KC_BSLS, KC_QUES, KC_PEQL, KC_PLUS, KC_ENT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSPO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_LBRC,                      KC_RBRC, KC_BSLS, KC_QUES, KC_PEQL, KC_PLUS, KC_RSPC,\
+      KC_LSPO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_LBRC,                      KC_RBRC, KC_CIRC, KC_TILD,  KC_GRV,   KC_NO, KC_RSPC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, KC_LALT,   MO(3),     KC_SPC,   KC_NO, KC_TRNS \
                                       //`--------------------------'  `--------------------------'
