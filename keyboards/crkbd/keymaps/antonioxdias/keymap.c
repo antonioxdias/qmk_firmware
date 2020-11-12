@@ -49,7 +49,7 @@ MT(MOD_LCTL,KC_ESC),KC_A,  KC_S,    KC_D,    KC_F,    KC_G,                     
 
   [_NumNav] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_PSCR,   KC_NO,    KC_7,    KC_8,    KC_9,    KC_0,                      KC_HOME, KC_PGUP, KC_PGDN,  KC_END,   KC_NO,  KC_DEL,\
+      KC_PSCR,   KC_NO,    KC_7,    KC_8,    KC_9,    KC_0,                      KC_HOME, KC_PGUP, KC_PGDN,  KC_END,   KC_NO, KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 MT(MOD_LCTL,KC_ESC),KC_NO, KC_4,    KC_5,    KC_6,    KC_0,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT,   KC_NO,  KC_INS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -73,7 +73,7 @@ MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO, LITERAL,ARROWFUNC,KC_LCBR,                     
 
   [_FMedia] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        RESET,   KC_NO,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MSTP,   SHRUG,\
+        RESET,   KC_NO,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MSTP,  KC_DEL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS,   KC_NO,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                        KC_NO, KC_WH_U, KC_WH_D,   KC_NO,  KEYMAP,     LOG,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
