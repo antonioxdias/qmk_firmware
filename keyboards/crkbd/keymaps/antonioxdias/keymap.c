@@ -24,6 +24,9 @@ enum custom_keycodes {
   FMedia,
   SHRUG,
   KEYMAP,
+  LOG,
+  ARROWFUNC,
+  LITERAL,
 };
 
 enum macro_keycodes {
@@ -60,9 +63,9 @@ MT(MOD_LCTL,KC_ESC),KC_NO, KC_4,    KC_5,    KC_6,    KC_0,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_PIPE, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_AMPR, KC_SLSH, KC_QUOT, KC_DQUO, KC_ASTR, KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO,   KC_NO,   KC_NO, KC_LCBR,                      KC_RCBR, KC_BSLS, KC_QUES, KC_PEQL, KC_PLUS, KC_ENT,\
+MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO, LITERAL,ARROWFUNC,KC_LCBR,                      KC_RCBR, KC_BSLS, KC_QUES, KC_PEQL, KC_PLUS, KC_ENT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSPO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_LBRC,                      KC_RBRC, KC_CIRC, KC_TILD,  KC_GRV,   KC_NO, KC_RSPC,\
+      KC_LSPO,   KC_NO,   KC_NO,   KC_LT,   KC_GT, KC_LBRC,                      KC_RBRC, KC_CIRC, KC_TILD,  KC_GRV,   KC_NO, KC_RSPC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, KC_LALT,   MO(3),     KC_SPC,   KC_NO, KC_TRNS \
                                       //`--------------------------'  `--------------------------'
@@ -72,7 +75,7 @@ MT(MOD_LCTL,KC_ESC),KC_NO,KC_NO,   KC_NO,   KC_NO, KC_LCBR,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         RESET,   KC_NO,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MSTP,   SHRUG,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_CAPS,   KC_NO,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                        KC_NO, KC_WH_U, KC_WH_D,   KC_NO,   KC_NO,  KEYMAP,\
+      KC_CAPS,   KC_NO,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                        KC_NO, KC_WH_U, KC_WH_D,   KC_NO,  KEYMAP,     LOG,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,   KC_NO,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                        KC_NO, KC_BRID, KC_BRIU,   KC_NO,   KC_NO, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -194,16 +197,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_FMedia);
       }
       return false;
-    case SHRUG:
+    case KEYMAP:
       if (record->event.pressed) {
-        SEND_STRING("¯\\_(ツ)_/¯");
+        SEND_STRING("https://github.com/antonioxdias/qmk_firmware/tree/master/keyboards/crkbd/keymaps/antonioxdias");
       } else {
         // when keycode is released
       }
       break;
-    case KEYMAP:
+    case LOG:
       if (record->event.pressed) {
-        SEND_STRING("https://github.com/antonioxdias/qmk_firmware/tree/master/keyboards/crkbd/keymaps/antonioxdias");
+        SEND_STRING("console.log()"SS_TAP(X_LEFT));
+      } else {
+        // when keycode is released
+      }
+      break;
+    case ARROWFUNC:
+      if (record->event.pressed) {
+        SEND_STRING("=>");
+      } else {
+        // when keycode is released
+      }
+      break;
+    case LITERAL:
+      if (record->event.pressed) {
+        SEND_STRING("${}"SS_TAP(X_LEFT));
       } else {
         // when keycode is released
       }
