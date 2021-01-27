@@ -9,4 +9,8 @@ SRC +=  ./lib/glcdfont.c \
         # ./lib/host_led_state_reader.c \
         # ./lib/timelogger.c \
 
-UNICODE_ENABLE = yes
+OLED_DRIVER_ENABLE = yes
+WPM_ENABLE = yes
+
+# OPTIMIZATION
+EXTRAFLAGS += -flto
