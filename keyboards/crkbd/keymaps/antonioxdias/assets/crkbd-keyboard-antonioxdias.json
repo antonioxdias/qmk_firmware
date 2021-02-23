@@ -70,7 +70,7 @@
       "x": 2,
       "t": "#17a100\n#b50e0e\n\n\n#2863de\n\n#000000"
     },
-    "${}\n5\n\n\nF5\n\nD shift",
+    "${}\n5\n\n\nF5\n\nD gui",
     {
       "x": 8
     },
@@ -81,11 +81,11 @@
       "y": -0.875,
       "x": 1
     },
-    "\n4\n\n\nF4\n\nS ctrl",
+    "\n4\n\n\nF4\n\nS shift",
     {
       "x": 1
     },
-    "=>\n6\n\n\nF6\n\nF gui",
+    "=>\n6\n\n\nF6\n\nF allt",
     {
       "x": 6
     },
@@ -100,7 +100,7 @@
       "y": -0.875,
       "x": 4
     },
-    "{\n0\n\n\nF11\n\nG alt",
+    "{\n0\n\n\nF11\n\nG",
     {
       "x": 4,
       "t": "#17a100\n#b50e0e\n\n\n\n\n#000000"
@@ -112,7 +112,7 @@
       "y": -0.875,
       "t": "#17a100\n\n\n\n#2863de\n\n#000000"
     },
-    "|\n\n\n\nCpsLck\n\nA",
+    "|\n\n\n\nCpsLck\n\nA ctrl",
     {
       "x": 12
     },
