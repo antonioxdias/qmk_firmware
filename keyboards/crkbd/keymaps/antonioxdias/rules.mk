@@ -12,5 +12,8 @@ SRC +=  ./lib/glcdfont.c \
 OLED_DRIVER_ENABLE = yes
 WPM_ENABLE = yes
 
+# MEDIAKEYS
+EXTRAKEY_ENABLE = yes
+
 # OPTIMIZATION
 EXTRAFLAGS += -flto
