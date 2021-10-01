@@ -41,8 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CTL_SCLN RCTL_T(KC_SCLN)
 
 enum custom_keycodes {
-  SHRUG,
-  KEYMAP,
+  KEYMAP = SAFE_RANGE,
   LOG,
   ARROWFUNC,
   LITERAL,
