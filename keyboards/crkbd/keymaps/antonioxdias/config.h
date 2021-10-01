@@ -24,11 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-// #define MASTER_LEFT
-#define MASTER_RIGHT
+#define MASTER_LEFT
+// #define MASTER_RIGHT
 // #define EE_HANDS
-
-#define SSD1306OLED
 
 #define USE_SERIAL_PD2
 
@@ -46,11 +44,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //     #define RGBLIGHT_VAL_STEP 17
 // #endif
 
-// OPTIMIZATION
-
-#ifndef NO_DEBUG
-#define NO_DEBUG
-#endif // !NO_DEBUG
-#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
-#define NO_PRINT
-#endif // !NO_PRINT
+#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
