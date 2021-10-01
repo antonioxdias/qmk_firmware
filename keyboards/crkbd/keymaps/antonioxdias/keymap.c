@@ -24,9 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 #define L_QWERTY 0
-#define L_NumNav 1
-#define L_Symbols 2
-#define L_FMouse 3
+#define L_NUMNAV 2
+#define L_SYMBOLS 4
+#define L_FMOUSE 8
 
 // Left-hand home row mods
 #define CTL_A LCTL_T(KC_A)
@@ -41,10 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CTL_SCLN RCTL_T(KC_SCLN)
 
 enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  NumNav,
-  Symbols,
-  FMedia,
   SHRUG,
   KEYMAP,
   LOG,
@@ -53,7 +49,7 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [L_QWERTY] = LAYOUT( \
+  [0] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -66,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
-  [L_NumNav] = LAYOUT( \
+  [1] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO, KC_PSCR,    KC_7,    KC_8,    KC_9,    KC_0,                      KC_HOME, KC_PGUP, KC_PGDN,  KC_END,   KC_NO,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -78,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
     ),
 
-  [L_Symbols] = LAYOUT( \
+  [2] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_AMPR, KC_SLSH, KC_QUOT, KC_DQUO, KC_ASTR,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -90,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [L_FMouse] = LAYOUT( \
+  [3] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_NO,   RESET,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MSTP,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -115,17 +111,20 @@ void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (layer_state) {
         case L_QWERTY:
-            oled_write_ln_P(PSTR("Qwerty"), false);
+            oled_write_ln_P(PSTR("Qwerty\n"), false);
             break;
-        case L_NumNav:
-            oled_write_ln_P(PSTR("NumNav"), false);
+        case L_NUMNAV:
+            oled_write_ln_P(PSTR("NumNav\n"), false);
             break;
-        case L_Symbols:
-            oled_write_ln_P(PSTR("Symbols"), false);
+        case L_SYMBOLS:
+            oled_write_ln_P(PSTR("Symbols\n"), false);
             break;
-        case L_FMouse:
-            oled_write_ln_P(PSTR("FMouse"), false);
+        case L_FMOUSE:
+            oled_write_ln_P(PSTR("FMouse\n"), false);
             break;
+        default:
+            oled_write_ln_P(PSTR("Default\n"), false);
+
     }
 }
 
