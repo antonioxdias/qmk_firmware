@@ -6,6 +6,7 @@
 
 enum custom_keycodes {
   RICK = SAFE_RANGE,
+  CODE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -40,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, // F6 A1
     KC_NO, // C6 5
     KC_NO, // F7 A0
-    KC_PSCR, // D7 6 middle
+    CODE, // D7 6 middle
     KC_NO, // B1 15 encoder rotate right
     KC_NO, // E6 7
     KC_NO, // B3 14
@@ -102,6 +103,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case RICK:
       if (record->event.pressed) {
         SEND_STRING("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        tap_code(KC_ENT);
+      }
+      break;
+    case CODE:
+      if (record->event.pressed) {
+        SEND_STRING("https://github.com/antonioxdias/qmk_firmware/tree/master/keyboards/x_pad");
         tap_code(KC_ENT);
       }
       break;
