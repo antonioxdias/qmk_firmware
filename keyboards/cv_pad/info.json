@@ -7,6 +7,7 @@
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic_lite": true,
+        "tap_dance": true,
         "extrakey": false,
         "mousekey": false,
         "encoder": false
