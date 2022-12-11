@@ -7,7 +7,7 @@ The ultimate PROgrammer keyboard. Grab your mouse, open stackoverflow, and copy/
 
 ## Firmware
 
-Powered by QMK. To update the firmware fork this repo, [setup qmk](https://docs.qmk.fm/#/newbs_getting_started), make your changes then compile with `qmk compile -kb cv_pad -km default`. Flash the output file with [https://github.com/qmk/qmk_toolbox](qmk toolbox).
+Powered by QMK. To update the firmware fork this repo, [setup qmk](https://docs.qmk.fm/#/newbs_getting_started), make your changes then compile with `qmk compile -kb cv_pad -km default`. Flash the output file with [qmk toolbox](https://github.com/qmk/qmk_toolbox).
 
 To reset cv_pad, using the default keymap, quickly mash the left button 10+ times, and the controller will go into bootloader mode.
 
