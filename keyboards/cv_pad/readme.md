@@ -11,6 +11,10 @@ Powered by QMK. To update the firmware fork this repo, [setup qmk](https://docs.
 
 To reset cv_pad, using the default keymap, quickly mash the left button 10+ times, and the controller will go into bootloader mode.
 
-## Final notes
+## Model
+
+Designed in Tinkercad, freely available in [thingiverse](https://www.thingiverse.com/thing:5705800).
+
+## Note
 
 Macro pad created from scratch to be a secret santa gift at [Mosano](https://mosano.eu/)'s 2022 Christmas dinner.
