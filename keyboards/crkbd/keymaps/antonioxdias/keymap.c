@@ -26,7 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define L_QWERTY 0
 #define L_NUMNAV 2
 #define L_SYMBOLS 4
-#define L_FMOUSE 8
+#define L_FNMEDIA 8
+#define L_MOUSE 10
 
 // Left-hand home row mods
 #define CTL_A LCTL_T(KC_A)
@@ -47,23 +48,39 @@ enum custom_keycodes {
   LITERAL,
 };
 
+enum combos {
+  JK_M1,
+  KL_M3,
+  COMBO_LENGTH,
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH;
+
+const uint16_t PROGMEM jk_combo[] = {LALT_T(KC_J), RGUI_T(KC_K), COMBO_END};
+const uint16_t PROGMEM kl_combo[] = {RGUI_T(KC_K), RSFT_T(KC_L), COMBO_END};
+
+combo_t key_combos[] = {
+  [JK_M1] = COMBO(jk_combo, KC_BTN1),
+  [KL_M3] = COMBO(kl_combo, KC_BTN3),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_NO,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_NO,\
+        KC_NO,    KC_Q,LT(4, KC_W), KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U, KC_I,LT(4, KC_O),    KC_P,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO,   CTL_A,   SFT_S,   GUI_D,   ALT_F,    KC_G,                         KC_H,   ALT_J,   GUI_K,   SFT_L,CTL_SCLN,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_MINS,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_NO, KC_BSPC,LT(3, KC_ENT), LT(2, KC_SPC),LT(1, KC_TAB), KC_NO\
+                                 KC_NO,LT(4, KC_BSPC),LT(3, KC_ENT),  LT(2, KC_SPC),LT(1, KC_TAB), KC_NO\
                                       //`--------------------------'  `--------------------------'
 
   ),
 
   [1] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_NO, KC_PSCR,    KC_7,    KC_8,    KC_9,    KC_0,                      KC_HOME, KC_PGUP, KC_PGDN,  KC_END,   KC_NO,   KC_NO,\
+        KC_NO, KC_PSCR,    KC_7,    KC_8,    KC_9,    KC_0,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO,   KC_NO,    KC_4,    KC_5,    KC_6,    KC_0,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT,   KC_NO,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -87,13 +104,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_NO,   RESET,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MSTP,   KC_NO,\
+        KC_NO,   RESET,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_NO, KC_CAPS,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5,     LOG,   KC_NO,\
+        KC_NO, KC_CAPS,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                        KC_NO,   KC_NO,   KC_NO,   KC_NO,     LOG,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_NO, KC_PSCR,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      KC_BTN2, KC_WH_L, KC_WH_R, KC_BTN3,  KEYMAP,   KC_NO,\
+        KC_NO, KC_PSCR,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                        KC_NO, KC_BRMD, KC_BRMU,   KC_NO,  KEYMAP,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_NO,  KC_DEL, KC_TRNS,    KC_BTN1,  KC_ESC,   KC_NO \
+                                            KC_NO,  KC_DEL, KC_TRNS,     KC_SPC,  KC_ESC,   KC_NO \
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [4] = LAYOUT( \
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                      KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,   KC_NO,   KC_NO,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                      KC_BTN4,   KC_NO,   KC_NO, KC_BTN5,   KC_NO,   KC_NO,\
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                            KC_NO, KC_TRNS, KC_BTN3,    KC_BTN1, KC_BTN2,   KC_NO \
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -118,8 +147,11 @@ void oled_render_layer_state(void) {
         case L_SYMBOLS:
             oled_write_ln_P(PSTR("Symbols\n"), false);
             break;
-        case L_FMOUSE:
-            oled_write_ln_P(PSTR("FMouse\n"), false);
+        case L_FNMEDIA:
+            oled_write_ln_P(PSTR("FNMedia\n"), false);
+            break;
+        case L_MOUSE:
+            oled_write_ln_P(PSTR("Mouse\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Default\n"), false);
