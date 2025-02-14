@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_NO,   RESET,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY,   KC_NO,\
+        KC_NO, QK_BOOT,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO, KC_CAPS,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                        KC_NO,   KC_NO,   KC_NO,   KC_NO,     LOG,   KC_NO,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -212,13 +212,14 @@ void oled_render_logo(void) {
     oled_write_P(crkbd_logo, false);
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
         oled_render_keylog();
     } else {
         oled_render_logo();
     }
+    return 0;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
