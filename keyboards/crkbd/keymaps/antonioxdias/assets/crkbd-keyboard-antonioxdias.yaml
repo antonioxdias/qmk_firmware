@@ -1,0 +1,177 @@
+layout: {zmk_keyboard: cradio}
+layers:
+  QWERTY:
+  - Q
+  - {t: W, h: MOUSE}
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - {t: O, h: MOUSE}
+  - P
+  - {t: A, h: LCTRL}
+  - {t: S, h: LSHFT}
+  - {t: D, h: LGUI}
+  - {t: F, h: LALT}
+  - G
+  - H
+  - {t: J, h: RALT}
+  - {t: K, h: RGUI}
+  - {t: L, h: RSHFT}
+  - {t: ;, h: LCTRL}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - '-'
+  - {t: BSPC, h: MOUSE}
+  - {t: ENTER, h: FNMEDIA}
+  - {t: SPACE, h: SYMBOLS}
+  - {t: TAB, h: NUMNAV}
+  NUMNAV:
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - HOME
+  - PAGE DOWN
+  - PAGE UP
+  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '4'
+  - '5'
+  - '6'
+  - '0'
+  - '←'
+  - '↓'
+  - '↑'
+  - '→'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ','
+  - .
+  - {t: ▽, type: trans}
+  - BSPC
+  - ENTER
+  - SPACE
+  - {type: held}
+  SYMBOLS:
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - '&'
+  - /
+  - ''''
+  - '"'
+  - '*'
+  - '|'
+  - '${}'
+  - '=>'
+  - (
+  - '{'
+  - '}'
+  - )
+  - '?'
+  - '='
+  - +
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - <
+  - '['
+  - ']'
+  - '>'
+  - '~'
+  - '`'
+  - ^
+  - BSPC
+  - ENTER
+  - {type: held}
+  - TAB
+  FNMEDIA:
+  - 'RESET'
+  - F7
+  - F8
+  - F9
+  - F10
+  - PREV
+  - VOL -
+  - VOL +
+  - NEXT
+  - PLAY PAUSE
+  - CAPS LOCK
+  - F4
+  - F5
+  - F6
+  - F11
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - 'console.log()'
+  - PRINT SCREEN
+  - F1
+  - F2
+  - F3
+  - F12
+  - {t: ▽, type: trans}
+  - BRIGHT DOWN
+  - BRIGHT UP
+  - {t: ▽, type: trans}
+  - 'KEYMAP URL'
+  - DEL
+  - {type: held}
+  - SPACE
+  - ESC
+  MOUSE:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - HOME
+  - PAGE DOWN
+  - PAGE UP
+  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SCROLL LEFT
+  - SCROLL DOWN
+  - SCROLL UP
+  - SCROLL RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - M4
+  - M5
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - M3
+  - M1
+  - M2
